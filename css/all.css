@@ -1,0 +1,482 @@
+@charset "utf-8";
+  
+/* 和瀏覽器支援有關，可讓比較舊的瀏覽器支援HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+@font-face{}
+
+/* fontawesome */
+
+/* fontawesome END */
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+
+  /* 文字 END */
+
+  /* media */
+    /* 1200以上 */
+    @media (min-width: 1201px) {
+
+    }
+
+    /* 736~1200 */
+    @media screen and (min-width: 736px) and (max-width: 1200px) {
+      .html iframe{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      .html img{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* 把套件產生的藍線蓋過css */
+      a:focus{
+        outline: 0 !important;
+        outline: 0 !important;
+        outline-offset: 0 !important;
+      }
+      
+    }
+
+    /* 735以內 */
+    @media (max-width: 735px) {
+      .html iframe{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      .html img{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+    }
+
+  /* media END */
+
+
+ 
+
+/* 共用------------------------------- */
+
+.clear-fix{
+  clear: both;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+body{
+  background: #E1E1E1;
+}
+
+body,h1,h2,.title,.sub-title,.status{
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+  width: 620px;
+  margin: 0 auto;
+}
+
+.main{
+  width: 100%;
+  padding: 24px 0 150px;
+}
+
+  /* font */
+  .title,h1{
+    font-size: 24px;
+  }
+
+  .sub-title,h2{
+    font-size: 20px;
+  }
+
+  .paragraph,p{
+    font-family: 'Roboto-Regular';
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+  }
+
+  .remark,.placeholder{
+    font-family: 'Roboto-Regular';
+    font-size: 16px;
+    color: #757575;
+    line-height: 24px;
+  }
+
+  .status{
+    font-size: 24px;
+    color: #C8C8C8;
+    font-style: italic;
+  }
+  /* font END */
+
+
+
+
+  /* add_edit */
+  .add-task{
+    background: #FFFFFF;
+    border: 2px solid #C8C8C8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 18px 36px;
+
+    margin-bottom: 24px;
+    cursor: pointer;
+  }
+
+  .add-task .fa-plus{
+    font-size: 20px;
+    color: #C8C8C8;
+    margin-right: 14px;
+  }
+
+
+  /* task-list */
+
+  .task-list ul li{
+    margin-bottom: 8px;
+  }
+
+  .task-list ul li.active{
+    background-color: #FFF2DC;
+  }
+
+  .task-list ul li .list{
+    padding: 24px 32px 16px;
+    background-color: #F2F2F2;
+    margin-bottom: 6px;
+
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s; 
+    -moz-transition: all 0.3s; 
+    -o-transition: all 0.3s;
+  }
+
+  .task-list ul li .list.active{
+    background-color: #FFF2DC;
+  }
+
+  .task-list ul li .list:hover{
+    margin-top: -12px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .task-list ul li .list > div{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+  }
+
+  .list-check{
+    width: 24px;
+    height: 24px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s; 
+    -moz-transition: all 0.3s; 
+    -o-transition: all 0.3s;
+  }
+    .list-check .fa-check{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%); 
+      -moz-transform: translateY(-50%); 
+      -o-transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    .list-check.active{
+      background: #4A90E2;
+    }
+
+    .list-check.active .fa-check{
+      opacity: 1;
+      color: #fff;
+    }
+
+  .list-content{
+    width: 400px;
+  }
+
+  .list-content .title{
+    margin-bottom: 15px;
+    color: #000;
+    line-height: 1.2;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+  }
+
+  .list-content .title.active{
+    color: #9B9B9B;
+    text-decoration:line-through;
+  }
+
+  .list-content .lc-status.active{
+    display: none;
+  }
+
+  .list-content .lc-status span{
+    margin-right: 7px;
+  }
+
+  .list-edit .fa{
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .list-edit .star{
+    position: relative;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s; 
+    -o-transition: all 0.3s;
+  }
+
+  .list-edit .fa-star-o{
+    position: absolute;
+  }
+
+  .list-edit .fa-star{
+    position: absolute;
+    opacity: 0;
+    color: #F5A623;
+  }
+
+  .list-edit .star:hover .fa-star,
+  .list-edit .star.active .fa-star{
+    opacity: 1;
+  }
+
+  .list-edit .star:hover .fa-star-o,
+  .list-edit .star.active .fa-star-o{
+    opacity: 0;
+  }
+
+  .list-edit .edit{
+    margin-left: 55px;
+  }
+
+  .task-list .status{
+    padding-left: 32px;
+  }
+
+
+  /* add */
+  .add-con{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 #C8C8C8;
+    margin-bottom: 24px;
+    display: none;
+  }
+
+  .add-con .add-con-title > div{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+  }
+
+  .add-con-title{
+    padding: 24px 32px 16px;
+    border-bottom: 2px solid #C8C8C8;
+  }
+
+  .add-con-title .list-content .title{
+    margin-bottom: 0px;
+    width: 100%;
+    border: 0;
+    background: none;
+  }
+
+  .add-con .fa-pencil{
+    color: #4A90E2;
+  }
+
+  .add-con-edit{
+    padding: 24px 72px;
+  }
+
+  .ace-list{
+    margin-bottom: 22px;
+  }
+  .ace-list h2{
+    margin-bottom: 10px;
+  }
+  .ace-list h2 .fa{
+    margin-right: 4px;
+  }
+
+  .deadline,.file,.comments{
+    padding-left: 27px;
+  }
+
+  .deadline input{
+    width: 160px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 0;
+    border-radius: 2px;
+    padding: 0 15px;
+  }
+
+  .deadline input.hm{
+    margin-left: 5px;
+  }
+
+  .comments textarea{
+    width: 90%;
+    height: 100px;
+    padding: 12px;
+  }
+
+  .add-con-btn{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .add-con-btn button{
+    width: 50%;
+    float: left;
+    background:none;
+    border: 0;
+    padding: 16px 0;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .add-con-btn button .fa{
+    margin-right: 5px;
+  }
+
+  .add-con-btn button.cancel{
+    color: #D0021B;
+  }
+
+  .add-con-btn button.cancel:hover{
+    background: #FDFDFD;
+  }
+
+  .add-con-btn button.save{
+    background: #4A90E2;
+    color: #fff;
+  }
+
+  .add-con-btn button.save:hover{
+    background: #3982D7;
+  }
+
+  
+
+
+
+/* 共用 END ------------------------------- */
+
+
+/* header------------------------------- */
+
+header{
+  width: 100%;
+  height: 71px;
+  background-color: #4A90E2;
+}
+
+.nav{
+  width: 100%;
+  text-align: center;
+}
+
+.nav li{
+  display: inline-block;
+  vertical-align: top;
+  color: #00408B;
+  padding: 21px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s; 
+    -moz-transition: all 0.3s; 
+    -o-transition: all 0.3s;
+}
+
+.nav a:nth-child(2) li{
+  margin: 0 45px;
+}
+
+.nav li:hover,.nav li.active{
+  color: #fff;
+  border-bottom: solid 5px #00408B;
+}
+
+/* header END ------------------------------- */
+
+
+/* index------------------------------- */
+
+
+ 
+
+/* index END ------------------------------- */
+
+
+
+
+/* progress */
+
+
+
+/* progress END */
+
+
+/* completed */
+
+
+
+
+/* completed END */

@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+	<head>
+	<!-- 放置css meta title-->
+		<meta charset="utf-8" />
+		<title>Task recoed</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<meta http-equiv="Cache-control" content="public" />
+		<meta name="author" content="Billy Ji" />
+		<meta name="copyright" content="Billy Ji" />
+		<meta name="keywords" content="" />
+		<meta name="description"  content="" />
+		<meta name="distribution" content="Taiwan" />
+		<meta name="robots" content="all" />
+
+		<!-- 瀏覽器支援度 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<!-- 瀏覽器支援度 END -->
+
+		<meta content="INDEX, FOLLOW" name='ROBOTS' />
+		<meta content="3 DAYS" name='REVISIT-AFTER' />
+
+		<!-- share -->
+		<meta property="og:title" content=""/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="" />
+		<meta property="og:description" content="" />
+		<!--  share END -->
+
+
+	<!--css-->
+		<!--reset-->
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+
+		<!-- bootstrap 3.3.7 -->
+		<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+		<!-- ui -->
+		<link rel="stylesheet" href="css/jquery-ui.min.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+		<!-- Animate -->
+		<link href="css/animate.css" rel="stylesheet">
+
+		<!-- 字型icon 舊-->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- lightbox -->
+		<link href="css/lity.min.css" rel="stylesheet">
+
+		<!-- Roboto 字型 -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+		<!-- all -->
+		<link href="css/all.css" rel="stylesheet" type="text/css">
+
+	</head>
+
+	<!-- ontouchstart iphone hover支援 -->
+	<body ontouchstart>
+		<!-- <i class="fa fa-calendar" aria-hidden="true"></i>
+		<i class="fa fa-file-o" aria-hidden="true"></i>
+		<i class="fa fa-commenting-o" aria-hidden="true"></i>
+		<i class="fa fa-pencil" aria-hidden="true"></i> -->
+
+		<!--header-->
+		<header>
+			<div class="wrapper">
+				<ul class="nav">
+					<a href="index.html">
+						<li class="title active">My Tasks</li>
+					</a>
+					<a href="progress.html">
+						<li class="title">In Progress</li>
+					</a>
+					<a href="completed.html">
+						<li class="title">Completed</li>
+					</a>
+				</ul>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<div class="main">
+
+			<div class="wrapper">
+				<!-- add task || edit task -->
+				<section class="add_edit">
+					<div class="add-task">
+						<i class="fa fa-plus" aria-hidden="true"></i>
+						<span class="status">Add Task</span>
+					</div>
+					<div class="add-con">
+						<div class="add-con-title">
+							<div class="list-check">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</div>
+							<div class="list-content">
+								<!-- <h1 class="title">Type Something Here.</h1> -->
+								<input type="text" class="title" id="task-title" name="task-title" placeholder="Type Something Here.">
+							</div>
+							<div class="list-edit">
+								<span class="star">
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="edit">
+									<i class="fa fa-pencil" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+
+						<div class="add-con-edit">
+							<form action="">
+								<div class="ace-list">
+									<h2>
+										<i class="fa fa-calendar" aria-hidden="true"></i>
+										Deadline
+									</h2>
+									<div class="deadline">
+										<input type="text" class="ymd" id="ymd" name="ymd" placeholder="yyyy/mm/dd">
+										<input type="text" class="hm" id="hm" name="hm" placeholder="hh:mm">
+									</div>
+								</div>
+								<div class="ace-list">
+									<h2>
+										<i class="fa fa-file-o" aria-hidden="true"></i>
+										File
+									</h2>
+									<div class="file">
+										<label class="btn btn-info">
+											<input id="upload_img" style="" type="file">
+										</label>
+									</div>
+								</div>
+								<div class="ace-list">
+									<h2>
+										<i class="fa fa-commenting-o" aria-hidden="true"></i>
+										Comment
+									</h2>
+									<div class="comments">
+										<textarea class="message" id="message" name="message" cols="30" rows="10"></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="add-con-btn">
+							<button class="cancel">
+								<i class="fa fa-times" aria-hidden="true"></i>
+								Cancel
+							</button>
+							<button class="save" id="add-task">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+								Add Tasks
+							</button>
+						</div>
+
+					</div>
+				</section>
+
+				<section class="task-list">
+					<ul>
+						<li>
+							<div class="list">
+								<div class="list-check">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</div>
+								<div class="list-content">
+									<h1 class="title">Type Something Here.</h1>
+									<div class="lc-status">
+										<span class="remark">
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+											5/14
+										</span>
+										<span class="remark">
+											<i class="fa fa-file-o" aria-hidden="true"></i>
+										</span>
+										<span class="remark">
+											<i class="fa fa-commenting-o" aria-hidden="true"></i>
+										</span>
+									</div>
+								</div>
+								<div class="list-edit">
+									<span class="star">
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="edit">
+										<i class="fa fa-pencil" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+							<div class="add-con">
+								<div class="add-con-title">
+									<div class="list-check">
+										<i class="fa fa-check" aria-hidden="true"></i>
+									</div>
+									<div class="list-content">
+										<h1 class="title">Type Something Here.</h1>
+									</div>
+									<div class="list-edit">
+										<span class="star">
+											<i class="fa fa-star-o" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										</span>
+										<span class="edit">
+											<i class="fa fa-pencil" aria-hidden="true"></i>
+										</span>
+									</div>
+								</div>
+			
+								<div class="add-con-edit">
+									<form action="">
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-calendar" aria-hidden="true"></i>
+												Deadline
+											</h2>
+											<div class="deadline">
+												<input type="text" class="ymd" id="ymd" name="ymd" placeholder="yyyy/mm/dd">
+												<input type="text" class="hm" id="hm" name="hm" placeholder="hh:mm">
+											</div>
+										</div>
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-file-o" aria-hidden="true"></i>
+												File
+											</h2>
+											<div class="file">
+												<label class="btn btn-info">
+													<input id="upload_img" style="" type="file">
+												</label>
+											</div>
+										</div>
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-commenting-o" aria-hidden="true"></i>
+												Comment
+											</h2>
+											<div class="comments">
+												<textarea class="message" id="message" name="message" cols="30" rows="10"></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="add-con-btn">
+									<button class="cancel">
+										<i class="fa fa-times" aria-hidden="true"></i>
+										Cancel
+									</button>
+									<button class="save">
+										<i class="fa fa-plus" aria-hidden="true"></i>
+										Save
+									</button>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="list">
+								<div class="list-check active">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</div>
+								<div class="list-content">
+									<h1 class="title active">Type Something Here.</h1>
+									<div class="lc-status active">
+										<span class="remark">
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+											5/14
+										</span>
+										<span class="remark">
+											<i class="fa fa-file-o" aria-hidden="true"></i>
+										</span>
+										<span class="remark">
+											<i class="fa fa-commenting-o" aria-hidden="true"></i>
+										</span>
+									</div>
+								</div>
+								<div class="list-edit">
+									<span class="star">
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="edit">
+										<i class="fa fa-pencil" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+							<div class="add-con">
+								<div class="add-con-title">
+									<div class="list-check">
+										<i class="fa fa-check" aria-hidden="true"></i>
+									</div>
+									<div class="list-content">
+										<h1 class="title">Type Something Here.</h1>
+									</div>
+									<div class="list-edit">
+										<span class="star">
+											<i class="fa fa-star-o" aria-hidden="true"></i>
+											<i class="fa fa-star" aria-hidden="true"></i>
+										</span>
+										<span class="edit">
+											<i class="fa fa-pencil" aria-hidden="true"></i>
+										</span>
+									</div>
+								</div>
+				
+								<div class="add-con-edit">
+									<form action="">
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-calendar" aria-hidden="true"></i>
+												Deadline
+											</h2>
+											<div class="deadline">
+												<input type="text" class="ymd" id="ymd" name="ymd" placeholder="yyyy/mm/dd">
+												<input type="text" class="hm" id="hm" name="hm" placeholder="hh:mm">
+											</div>
+										</div>
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-file-o" aria-hidden="true"></i>
+												File
+											</h2>
+											<div class="file">
+												<label class="btn btn-info">
+													<input id="upload_img" style="" type="file">
+												</label>
+											</div>
+										</div>
+										<div class="ace-list">
+											<h2>
+												<i class="fa fa-commenting-o" aria-hidden="true"></i>
+												Comment
+											</h2>
+											<div class="comments">
+												<textarea class="message" id="message" name="message" cols="30" rows="10"></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="add-con-btn">
+									<button class="cancel">
+										<i class="fa fa-times" aria-hidden="true"></i>
+										Cancel
+									</button>
+									<button class="save">
+										<i class="fa fa-plus" aria-hidden="true"></i>
+										Save
+									</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<p class="status"><span class="data-total">1</span> tasks left</p>
+				</section>
+			</div>
+		</div>
+
+
+
+
+		<!--JavaScript-->
+
+			<!-- plugins -->
+
+			<script type="text/javascript" src="js/jquery_2.2.4_min.js"></script>
+
+			<!--ui-->
+			<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+			<!-- bootstrap -->
+			<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+
+			<!-- Owl Carousel -->
+			<script src="js/owl.carousel.min.js"></script>
+
+			<!-- wow -->
+			<script src="js/wow.min.js" type="text/javascript"></script>
+
+			<!-- lightbox -->
+			<script src="js/lity.min.js" type="text/javascript"></script>
+
+			<!-- PIE.htc 讓css3某些屬性能for IE -->
+			<!-- <script src="js/PIE.htc" type="text/javascript"></script> -->
+
+			<!-- // plugins -->
+
+
+			<!-- customized -->
+
+			<script src="js/all.js" type="text/javascript"></script>
+
+			<!-- // customized -->
+
+		<!-- // JavaScript-->
+
+
+	</body>
+</html>
